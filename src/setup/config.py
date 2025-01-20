@@ -20,8 +20,8 @@ class DatabaseConfig(BaseModel):
 
 class JWTAuthConfig(BaseModel):
     algorithm: str = "RS256"
-    private_key: Path = BASE_DIR / "certs" / "jwt-private.pem"
-    public_key: Path = BASE_DIR / "certs" / "jwt-public.pem"
+    private_key: Path = BASE_DIR / "jwt-keys" / "jwt-private.pem"
+    public_key: Path = BASE_DIR / "jwt-keys" / "jwt-public.pem"
     access_expire_minutes: timedelta = Field(default=timedelta(minutes=10))
     refresh_expire_days: timedelta = Field(default=timedelta(days=10))
 
